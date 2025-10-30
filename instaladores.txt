@@ -1,0 +1,53 @@
+# ==========================================
+# 🌱 PAQUETES FUNDAMENTALES PARA NODE.JS
+# ==========================================
+
+# Express → Framework para crear servidores HTTP
+npm i express
+
+# Dotenv → Manejo de variables de entorno
+npm i dotenv
+
+# Nodemon → Reinicia automáticamente el servidor (instalación global)
+npm i -g nodemon
+
+# Axios → Cliente HTTP para hacer peticiones API
+npm i axios
+
+# Chalk → Colorear texto en la consola
+npm i chalk
+
+# Cowsay → Texto divertido con vaquitas en consola
+npm i cowsay
+
+# Morgan → Logger HTTP para desarrollo
+npm i morgan
+
+# Cors → Permitir conexiones desde otros orígenes (CORS)
+npm i cors
+
+# Mongoose → Conexión y modelado con MongoDB
+npm i mongoose
+
+# Bcrypt → Encriptar contraseñas
+npm i bcrypt
+
+# Jsonwebtoken → Autenticación con tokens JWT
+npm i jsonwebtoken
+
+# Body-parser → Procesar cuerpos de solicitudes HTTP
+npm i body-parser
+
+# Dot-prop → Acceso fácil a propiedades anidadas en objetos
+npm i dot-prop
+
+# Inquirer → Crear menús interactivos en consola
+npm i inquirer
+
+# Moment → Manejo de fechas y tiempos
+npm i moment
+
+# ==========================================
+# 🌈 COMANDO PARA EJECUTAR ESTE ARCHIVO
+# ==========================================
+# ForEach ($line in Get-Content .\instaladores.txt) { $l = $line.Trim() if ($l -and -not $l.StartsWith('#')) { Write-Host "Ejecutando: $l" Invoke-Expression $l } }
