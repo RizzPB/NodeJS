@@ -9,14 +9,9 @@ app.set("views", __dirname + "/views");
 //static
 app.use(express.static(__dirname + "/public"));
  
-
-app.get("/", (req, res) => {
-  res.render("index", { titulo: "mi titulo dinamico" });
-});
-
-app.get('/servicios', (req, res) => {
-  res.render("servicios", {tituloServicios: "Estas en la pagina de servicios con EJS"})
-})
+//Rutas web
+app.use('/', require('./router/RutasWeb'));
+app.use('/mascotas', require('./router/Mascotas'));
 
 app.use((req, res, next) => {
   res.status(404).render("404",

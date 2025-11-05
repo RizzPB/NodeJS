@@ -51,3 +51,5 @@ npm i moment
 # 🌈 COMANDO PARA EJECUTAR ESTE ARCHIVO
 # ==========================================
 # ForEach ($line in Get-Content .\instaladores.txt) { $l = $line.Trim() if ($l -and -not $l.StartsWith('#')) { Write-Host "Ejecutando: $l" Invoke-Expression $l } }
+
+#instalar la extension ejs lenguaje... desde extensiones
