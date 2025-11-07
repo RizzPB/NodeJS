@@ -55,4 +55,29 @@ router.get('/:id', async(req, res) => {
     }
 })
 
+router.delete('/:id', async (req, res) => {
+    const id = req.params.id;
+    console.log('id desde backend', id)
+    try {
+
+        const mascotaDB = await Mascota.findByIdAndDelete({ _id: id });
+        console.log(mascotaDB)
+
+        if (!mascotaDB) {
+            res.json({
+                estado: false,
+                mensaje: 'No se puede eliminar </3'
+            })
+        } else {
+            res.json({
+                estado: true,
+                mensaje: 'Eliminado! >:D'
+            })
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 module.exports = router;
