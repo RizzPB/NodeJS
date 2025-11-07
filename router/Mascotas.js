@@ -12,19 +12,28 @@ router.get('/', async (req, res) => {
 
         res.render("mascotas", {
             listaMascotas: arrayMascotasDB
-
-        /* listaMascotas: [
-            // posterior se consume en una base de datos
-            {id: 'mascota1', nombre: 'Oliver', descripcion: 'Gato muy dormilon <3'},
-            {id: 'mascota2', nombre: 'Kiev', descripcion: 'Gato muy curioso y mimado'},
-            {id: 'mascota3', nombre: 'Atenea', descripcion: 'Perrita demasiado amorosa que sonrie :D'}
-        ] */
     })
         
     } catch (error) {
         console.log(error)
     }
 
+})
+
+
+router.get('/crear', (req, res) => {
+    res.render('crear')
+})
+
+router.post('/', async (req, res) => {
+    const body = req.body
+    console.log(body)
+    try {
+        await Mascota.create(body)
+        res.redirect('/mascotas')
+    } catch (error) {
+        console.log('error', error)
+    }
 })
 
 module.exports = router;
