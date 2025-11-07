@@ -2,6 +2,20 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+//conexion a base de datos
+const mongoose = require('mongoose');
+
+const usuario = "BeirutUser"
+const password = "dHWMhSDp2TFPWW5"
+const bdname = 'veterinaria'
+const uri = `mongodb+srv://${usuario}:${password}@cluster0.amaajdu.mongodb.net/${bdname}?retryWrites=true&w=majority`;
+
+mongoose.connect(uri, 
+  { useNewUrlParser: true, useUnifiedTopology: true }
+)
+  .then(()=> console.log('conectado a mongodb')) 
+  .catch(e => console.log('error de conexión', e))
+
 //motor de plantillas:
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
