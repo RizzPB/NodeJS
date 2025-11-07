@@ -36,4 +36,23 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.get('/:id', async(req, res) => {
+    //leer la url
+    const id = req.params.id
+    try {
+        const mascotaDB = await Mascota.findOne({ _id: id })
+        console.log(mascotaDB)
+        res.render('detalle', {
+            mascota: mascotaDB,
+            error: false
+        })
+    } catch (error) {
+        console.log('Error </3', error)
+        res.render('detalle', {
+            error: true,
+            mensaje: 'No se encuentra el documento especificado ...'
+        })
+    }
+})
+
 module.exports = router;
